@@ -53,7 +53,7 @@ checkCookie(loginCookie);
 
 // function for checking the password and user
 let correctInputs = () => {
-    for (var i = 0; i < USERS.length; i++) {
+    for (let i = 0; i < USERS.length; i++) {
       if (newUserInput.value == USERS[i].name) {
         if (passwordInput.value == USERS[i].secret) {
           newUserOutput.innerText = newUserInput.value;
