@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>top scret</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div id="logo"><img src="./assets/img/Vector.png" alt="Eye logo" /></div>
+      <nav>
+        <p id="userName">>welcome, <span id="newUser">User231</span></p>
+        <p id="logOut">>log out</p>
+      </nav>
+    </header>
+    <main id="body">
+      <section id="img">
+        <img
+          src="./assets/img/Illustration.png"
+          alt="Man walking with coding background"
+        />
+      </section>
+      <section id="content">
+        <h1>TOP SECRET</h1>
+        <p>You may not click the button.</p>
+
+        <button id="secretContent" class="btn">>SECRET CONTENT</button>
+      </section>
+
+      <div id="loginModal">
+        <div>
+          <h2>>LOGIN</h2>
+          <form id="loginData">
+            <input type="text" placeholder="username" id="username" required />
+            <p class="required" id="starUser">*</p>
+            <input
+              type="password"
+              placeholder="password"
+              id="password"
+              required
+            />
+            <p class="required" id="starPassword">*</p>
+
+            <input type="submit" value="SUBMIT" class="btn" id="checkData" />
+
+            <p id="resultOfCheck"></p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
