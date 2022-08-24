@@ -8,7 +8,6 @@ const USERS = [
     { name: "admin", secret: "1234"},
 ];
 
-// let secretContent = document.querySelector('#secretContent');
 let checkData = document.querySelector('#checkData');
 let logOut = document.querySelector('#logOut');
 let loginModal = document.querySelector('#loginModal');
@@ -28,15 +27,12 @@ let closing = () => {
 // set cookies, password and user -> not safe!!
 let cookies = () => {
     username = "username=" + newUserInput.value + ";path=/" + ";max-age= 60*30 ";
-    password = "password=" + passwordInput.value + ";path=/" + ";max-age= 60*30";
     document.cookie = username; 
-    document.cookie = password;
 };
 
 // function to remove cookies
 let logout = () => {
-    document.cookie = "username=; max-age=0";
-    document.cookie = "password=; max-age=0";
+    document.cookie = "username=; max-age=-1; path=/";
     loginModal.style.display = "block";
 }
 
@@ -62,13 +58,15 @@ let correctInputs = () => {
           return
         } else {
             resultOfCheck.innerText = '*password incorrect';
+            passwordInput.style.color = 'red';
             resultOfCheck.style.display = "block";
             starPassword.style.display = "block";
             return
         }
       }
     };
-
+    newUserInput.style.color = 'red';
+    passwordInput.style.color = 'red';
     resultOfCheck.innerText = 'user does not exist.';
     resultOfCheck.style.display = "block";
     starUser.style.display = "block";
@@ -80,8 +78,7 @@ checkData.addEventListener('click', (event) => {
     correctInputs();
 });
 
-logOut.addEventListener('click', (event) => {
-    event.preventDefault();
+logOut.addEventListener('click', () => {
     logout();
     document.location.reload();
 });
